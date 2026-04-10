@@ -170,7 +170,7 @@
                     <div id="contenedor-servicios">
                         <div class="fila-servicio" style="display: flex; gap: 10px; margin-bottom: 10px;">
                             <input type="text" name="descripciones[]" placeholder="Ej: Cambio de aceite" required style="flex: 2; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;">
-                            <input type="number" name="precios[]" placeholder="Valor ($)" class="precio-item" required style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;">
+                            <input type="text" name="precios[]" placeholder="Ej: 300000 (Sin puntos)" class="precio-item" required style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9]/g, ''); recalcularTotal();">
                             <button type="button" class="btn-eliminar-fila" style="padding: 10px; background-color: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer; display: none;"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </div>
@@ -343,9 +343,10 @@
     function recalcularTotal() {
         let total = 0;
         document.querySelectorAll('.precio-item').forEach(input => {
-            if (input.value) total += parseFloat(input.value);
+            let valorLimpio = input.value.replace(/[^0-9]/g, '');
+            if (valorLimpio) total += parseInt(valorLimpio);
         });
-        inputTotal.value = total;
+        document.getElementById('precio_total').value = total;
     }
 
     if (btnAgregar) {
@@ -355,12 +356,10 @@
             nuevaFila.style.cssText = 'display: flex; gap: 10px; margin-bottom: 10px;';
             nuevaFila.innerHTML = `
                 <input type="text" name="descripciones[]" placeholder="Siguiente servicio..." required style="flex: 2; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;">
-                <input type="number" name="precios[]" placeholder="Valor ($)" class="precio-item" required style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;">
+                <input type="text" name="precios[]" placeholder="Ej: 300000 (Sin puntos)" class="precio-item" required style="flex: 1; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;" oninput="this.value = this.value.replace(/[^0-9]/g, ''); recalcularTotal();">
                 <button type="button" class="btn-eliminar-fila" style="padding: 10px; background-color: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer;"><i class="fa-solid fa-trash"></i></button>
             `;
             contenedorServicios.appendChild(nuevaFila);
-            
-            nuevaFila.querySelector('.precio-item').addEventListener('input', recalcularTotal);
             
             nuevaFila.querySelector('.btn-eliminar-fila').addEventListener('click', function() {
                 nuevaFila.remove();

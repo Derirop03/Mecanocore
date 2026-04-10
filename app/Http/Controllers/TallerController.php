@@ -17,11 +17,10 @@ class TallerController extends Controller
 
     public function store(Request $request)
     {
-        // 1. Recibimos los arreglos del formulario
+        
         $descripciones = $request->input('descripciones');
         $precios = $request->input('precios');
         
-        // 2. Construimos un texto unificado para guardar en la BD
         $textoFallaDetallado = "";
         
         for ($i = 0; $i < count($descripciones); $i++) {
@@ -37,7 +36,7 @@ class TallerController extends Controller
             'mecanico_asignado' => $request->mecanico_asignado,
             'descripcion_falla' => $textoFallaDetallado, 
             'precio' => $request->precio, 
-            'estado' => 'En Proceso' 
+            'estado' => 'En Diagnóstico' 
         ]);
 
         return redirect('/taller')->with('success', 'Servicios registrados y sumados correctamente.');

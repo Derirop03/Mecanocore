@@ -12,12 +12,13 @@ class Reparacion extends Model
 
     protected $table = 'reparaciones';
 
+    
     protected $fillable = [
-        'vehiculo_id',
-        'mecanico_asignado',
-        'descripcion_falla',
-        'estado',
-        'precio'
+        'vehiculo_id', 
+        'mecanico_asignado', 
+        'descripcion_falla', 
+        'precio', 
+        'estado'
     ];
 
     public function vehiculo()
