@@ -1,0 +1,50 @@
+body { background-color: #EEEEEE; font-family: 'Poppins', sans-serif; margin: 0; overflow-x: hidden; }
+.contenedor-sistema { display: flex; min-height: 100vh; }
+
+.sidebar { width: 260px; background-color: #212121; color: #EEEEEE; display: flex; flex-direction: column; position: fixed; height: 100vh; left: 0; top: 0; z-index: 100; box-shadow: 4px 0 10px rgba(0,0,0,0.2); }
+.sidebar-header { height: 80px; display: flex; align-items: center; padding: 0 20px; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.logo-icon-small { background-color: #0D7377; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; border-radius: 8px; font-size: 16px; color: white; }
+.sidebar-header h2 { font-size: 20px; margin: 0; color: white; }
+.sidebar-menu { flex: 1; padding: 20px 0; display: flex; flex-direction: column; gap: 5px; }
+.menu-item { display: flex; align-items: center; gap: 15px; padding: 15px 25px; color: #bdc3c7; text-decoration: none; transition: 0.3s; font-size: 15px; border-left: 4px solid transparent; }
+.menu-item:hover { background-color: rgba(255,255,255,0.05); color: white; }
+.menu-item.activo { background-color: rgba(13, 115, 119, 0.2); color: #32E0C4; border-left-color: #32E0C4; }
+.menu-item i { width: 20px; text-align: center; }
+.sidebar-footer { padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
+.btn-cerrar { display: flex; align-items: center; gap: 10px; color: #e74c3c; text-decoration: none; font-weight: 500; transition: 0.3s; }
+.btn-cerrar:hover { color: #ff6b6b; }
+
+.contenido-principal { margin-left: 260px; flex: 1; padding: 40px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+.titulo-seccion h1 { font-size: 28px; color: #212121; margin: 0 0 5px 0; }
+.titulo-seccion p { color: #7f8c8d; margin: 0; font-size: 14px; }
+
+.form-busqueda { display: flex; gap: 10px; }
+.form-busqueda input { padding: 12px 20px; border: 2px solid #ddd; border-radius: 8px; width: 250px; font-family: 'Poppins', sans-serif; font-size: 14px; transition: 0.3s; }
+.form-busqueda input:focus { border-color: #0D7377; outline: none; }
+.form-busqueda button { background-color: #0D7377; color: white; border: none; width: 45px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+.form-busqueda button:hover { background-color: #32E0C4; color: #212121; }
+
+.contenedor-tabla { background-color: white; border-radius: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow-x: auto; }
+.tabla-historial { width: 100%; border-collapse: collapse; text-align: left; }
+.tabla-historial th { background-color: #f8f9fa; color: #2C3E50; font-weight: 600; padding: 15px; border-bottom: 2px solid #EEEEEE; font-size: 14px; }
+.tabla-historial td { padding: 15px; border-bottom: 1px solid #EEEEEE; vertical-align: middle; color: #212121; font-size: 14px; }
+.tabla-historial tbody tr:hover { background-color: #f8f9fa; }
+
+.fecha-box { display: flex; flex-direction: column; }
+.fecha-box .fecha { font-weight: 600; color: #212121; }
+.fecha-box .hora { font-size: 12px; color: #7f8c8d; }
+
+.placa-badge { background-color: #212121; color: #32E0C4; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-family: monospace; font-size: 14px; letter-spacing: 1px; }
+
+.info-vehiculo { display: flex; flex-direction: column; }
+.info-vehiculo .marca { font-weight: 600; color: #212121; }
+.info-vehiculo .modelo { font-size: 12px; color: #7f8c8d; }
+
+.col-falla { max-width: 300px; color: #7f8c8d; font-size: 13px; line-height: 1.5; }
+
+.mecanico-badge { background-color: rgba(52, 152, 219, 0.1); color: #2980b9; padding: 6px 12px; border-radius: 50px; font-size: 12px; font-weight: 600; }
+
+.estado-badge { padding: 6px 12px; border-radius: 50px; font-size: 12px; font-weight: 600; }
+.estado-finalizado { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+.text-center { text-align: center; color: #7f8c8d; padding: 30px !important; }

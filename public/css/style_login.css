@@ -1,0 +1,225 @@
+body {
+    background-color: #EEEEEE;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #212121;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}  
+
+.grupo-botones {
+    display: flex;
+    gap: 15px;
+}
+
+.home-item, .welcome-item, .login-item {
+    display: flex;
+    background-color: #0D7377;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 15px;
+    text-decoration: none; 
+    align-items: center;
+}
+
+.home-item:hover, .welcome-item:hover, .login-item:hover {
+    background-color: #32E0C4;
+    color: #212121;
+    font-weight: 600;
+}
+
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.login-card {
+    background-color: white;
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #212121;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.login-card p {
+    color: #7f8c8d;
+    margin-bottom: 35px;
+    font-size: 15px;
+}
+
+.grupo-input {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.grupo-input label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #212121;
+}
+
+.grupo-input input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+    background-color: #EEEEEE;
+}
+
+.grupo-input input:focus {
+    border-color: #0D7377;
+    background-color: white;
+    outline: none;
+    box-shadow: 0 0 8px rgba(13, 115, 119, 0.2);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #0D7377;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(13, 115, 119, 0.3);
+}
+
+.btn-login:hover {
+    background-color: #32E0C4;
+    color: #212121;
+    transform: translateY(-2px);
+}
+
+.link-volver {
+    color: #0D7377;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.link-volver:hover {
+    color: #32E0C4;
+}
+
+.pie-pagina {
+    background-color:#212121; 
+    color: #EEEEEE;
+    padding-top: 60px;
+    margin-top: auto; 
+}
+
+.contenedor-footer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;            
+    min-width: 250px;    
+}
+
+.footer-col h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #32E0C4; 
+}
+
+.footer-col h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+    border-bottom: 2px solid #0D7377; 
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-col p, .footer-col a {
+    line-height: 1.6;
+    color: #bdc3c7; 
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col a:hover {
+    color: #32E0C4; 
+    padding-left: 5px; 
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.redes-sociales i {
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.redes-sociales i:hover {
+    color: #32E0C4;
+    transform: scale(1.2);
+}
+
+.copyright {
+    background-color: #1a252f; 
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #7f8c8d;
+}

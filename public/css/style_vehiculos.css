@@ -1,0 +1,458 @@
+body {
+    background-color: #EEEEEE;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.contenedor-sistema {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #212121;
+    color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-icon-small {
+    background-color: #0D7377;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+    margin: 0;
+    color: white;
+}
+
+.sidebar-menu {
+    flex: 1;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+    border-left: 4px solid transparent;
+}
+
+.menu-item:hover {
+    background-color: rgba(255,255,255,0.05);
+    color: white;
+}
+
+.menu-item.activo {
+    background-color: rgba(13, 115, 119, 0.2);
+    color: #32E0C4;
+    border-left-color: #32E0C4;
+}
+
+.menu-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-cerrar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-cerrar:hover {
+    color: #ff6b6b;
+}
+
+.contenido-principal {
+    margin-left: 260px;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion h1 {
+    font-size: 28px;
+    color: #212121;
+    margin: 0 0 5px 0;
+}
+
+.titulo-seccion p {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 14px;
+}
+
+.btn-nuevo {
+    background-color: #0D7377;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(13, 115, 119, 0.3);
+}
+
+.btn-nuevo:hover {
+    background-color: #32E0C4;
+    color: #212121;
+    transform: translateY(-2px);
+}
+
+.contenedor-tabla {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
+.tabla-vehiculos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-vehiculos th {
+    background-color: #f8f9fa;
+    color: #2C3E50;
+    font-weight: 600;
+    padding: 15px;
+    border-bottom: 2px solid #EEEEEE;
+    font-size: 14px;
+}
+
+.tabla-vehiculos td {
+    padding: 15px;
+    border-bottom: 1px solid #EEEEEE;
+    vertical-align: middle;
+    color: #212121;
+    font-size: 14px;
+}
+
+.tabla-vehiculos tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.placa-badge {
+    background-color: #212121;
+    color: #32E0C4;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.info-vehiculo {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-vehiculo .marca {
+    font-weight: 600;
+    color: #212121;
+}
+
+.info-vehiculo .modelo {
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.estado-badge {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.estado-en-diagnostico {
+    background-color: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+}
+
+.estado-entregado {
+    background-color: rgba(149, 165, 166, 0.2);
+    color: #7f8c8d;
+}
+
+.acciones-tabla {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+.btn-icon.view {
+    background-color: #34495e;
+}
+
+.btn-icon.view:hover {
+    background-color: #2c3e50;
+}
+
+.btn-icon.edit {
+    background-color: #0D7377;
+}
+
+.btn-icon.edit:hover {
+    background-color: #0b6063;
+}
+
+.btn-icon.delete {
+    background-color: #e74c3c;
+}
+
+.btn-icon.delete:hover {
+    background-color: #c0392b;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(-20px);
+    transition: 0.3s;
+}
+
+.modal-overlay.activo .modal-content {
+    transform: translateY(0);
+}
+
+.modal-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid #EEEEEE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #212121;
+}
+
+.btn-cerrar-modal {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #7f8c8d;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cerrar-modal:hover {
+    color: #e74c3c;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-grupo {
+    flex: 1;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grupo label {
+    font-weight: 600;
+    color: #2C3E50;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-grupo input,
+.form-grupo select {
+    padding: 12px;
+    border: 2px solid #EEEEEE;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: 0.3s;
+    background-color: #f8f9fa;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus {
+    border-color: #0D7377;
+    background-color: white;
+    outline: none;
+}
+
+.modal-footer {
+    padding: 20px 30px;
+    border-top: 1px solid #EEEEEE;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.btn-cancelar {
+    background-color: #f8f9fa;
+    color: #7f8c8d;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cancelar:hover {
+    background-color: #EEEEEE;
+    color: #212121;
+}
+
+.btn-guardar {
+    background-color: #0D7377;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-guardar:hover {
+    background-color: #32E0C4;
+    color: #212121;
+}
+
+.detalles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.detalle-item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #EEEEEE;
+}
+
+.detalle-label {
+    font-size: 12px;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.detalle-valor {
+    font-size: 16px;
+    color: #212121;
+    font-weight: 500;
+}
+
+.detalle-valor.placa-badge {
+    align-self: flex-start;
+    color: #EEEEEE;
+}
